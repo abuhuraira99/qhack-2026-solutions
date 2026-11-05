@@ -1,17 +1,18 @@
 # QHack 2026 — Quantum Coding Championship
 
-My team's solutions and write-up for the QHack 2026 Quantum Coding Championship (October 16–23, 2026), built with [PennyLane](https://pennylane.ai).
+My solutions and write-up for the QHack 2026 Quantum Coding Championship (October 16–23, 2026), Xanadu's global quantum programming competition, built with [PennyLane](https://pennylane.ai). I competed solo.
 
-**Team:** AbuHuraira's Team  ·  **Handle:** @abuhuraira
+**Handle:** @abuhuraira  ·  **Team size:** 1
 
 ## Result
 
+- **Standing:** top 40 of 1,652 teams (#34 in the final-day standings, top 2.5%)
 - **Challenges solved:** 22 / 23
 - **Points:** 4800
-- **Peak rank:** #2 of 1652 teams
-- Every challenge our team submitted passed the public **and** hidden test cases on the first correct submission.
+- **Peak rank:** #2 of 1,652, reached in the first minutes after Group 3 unlocked
+- Every solved challenge passed both the public and the hidden test cases.
 
-The three groups unlocked on a schedule; each was solved within minutes of unlocking.
+The challenges unlocked in three groups. Group 2 was cleared 26 minutes after it opened, and 8 of the 9 Group 3 challenges were solved within 10 minutes of unlocking.
 
 ## Challenges
 
@@ -53,11 +54,11 @@ The three groups unlocked on a schedule; each was solved within minutes of unloc
 | Implementing POVMs | 400 | ✅ Solved | [`povm_implementation`](group-3/0400pts_povm_implementation/) |
 | Pulse Optimization | 400 | ✅ Solved | [`pulse_programming`](group-3/0400pts_pulse_programming/) |
 
-## The Personal Best (Gold) challenge — why it is not solvable honestly
+## The Personal Best (Gold) challenge
 
 Group 3 included a three-tier unitary-synthesis challenge (Bronze/Silver/Gold). Our Silver solution is **parameter-optimal**: it implements an arbitrary *n*-qubit unitary with exactly 4ⁿ−1 rotations, the theoretical minimum, matching the optimum in Xanadu's own paper [*Parameter-optimal unitary synthesis with flag decompositions* (arXiv:2603.20376)](https://arxiv.org/abs/2603.20376).
 
-The **Gold** tier asks for a 60% cost reduction, which is below the information-theoretic floor for this cost model. A full analysis, with citations and the community discussion, is in [`docs/GOLD_IMPOSSIBILITY.md`](docs/GOLD_IMPOSSIBILITY.md).
+The **Gold** tier asks for a 60% cost reduction. Exact synthesis cannot get there, because 60% needs fewer rotations than the 4ⁿ−1 floor allows; the only route left is approximating rotations with T gates inside an 8-wire limit, and I did not find a construction that fits. The analysis, with citations, is in [`docs/GOLD_IMPOSSIBILITY.md`](docs/GOLD_IMPOSSIBILITY.md).
 
 ## Repository layout
 
@@ -77,4 +78,4 @@ python group-2/0100pts_building_quantum_kernel/solution.py
 
 ---
 
-*Leaderboard snapshot taken 2026-10-22 01:14:14 UTC. The competition was still live when this repository was created, so it was kept private until the event closed.*
+*Problem statements and challenge templates © Xanadu, reproduced here for study after the event closed. Leaderboard data is from snapshots taken during Group 3 (22 Oct 2026).*

@@ -4,6 +4,7 @@ Snapshot: 2026-10-22 01:14:14 UTC  ·  1652 teams
 
 ## Standing
 
+- **Standing:** top 40 of 1,652 (#34 in the final-day standings)
 - **Peak rank:** #2 of 1652
 - **Points:** 4800  ·  **Solved:** 22/23
 
@@ -60,4 +61,3 @@ Snapshot: 2026-10-22 01:14:14 UTC  ·  1652 teams
 | 9 | Shedo Solos | 5200 | 23 |
 | 10 | QuantumKat | 5200 | 23 |
 
-> Teams shown with the maximum point total include some whose Gold completion came from the grader bug described in [GOLD_IMPOSSIBILITY.md](GOLD_IMPOSSIBILITY.md); the honest maximum is 22 solved / 4800 points.

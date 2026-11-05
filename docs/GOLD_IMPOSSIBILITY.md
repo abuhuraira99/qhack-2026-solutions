@@ -1,9 +1,10 @@
-# Why "Personal Best (Gold)" is not solvable honestly
+# Why "Personal Best (Gold)" was out of reach
 
 Group 3's *Personal Best* challenge comes in three tiers — Bronze (5% saving), Silver
 (20%), Gold (60%) — over the baseline cost of synthesising an arbitrary *n*-qubit
-unitary. This note explains why **Gold cannot be reached by a legitimate circuit**, and
-documents the evidence. Our Silver solution already sits at the proven optimum.
+unitary. This note explains why **exact synthesis cannot reach Gold**, and why the
+T-gate routes I tried did not close the gap. My Silver solution already sits at the proven optimum
+for exact synthesis.
 
 ## The cost model
 
@@ -37,7 +38,7 @@ layouts, so almost every unitary needs
 > **k ≥ 4ⁿ − 1 rotations.**
 
 At *n* = 5 that is **1023 rotations → cost 45 012 → 21.06% saving**. This is exactly what
-our Silver solution achieves, and it is parameter-optimal. Gold would need ≤ 518
+my Silver solution achieves, and it is parameter-optimal. Gold would need ≤ 518
 rotations — **below the floor at every qubit count** (6 vs 15, 28 vs 63, 124 vs 255, 518 vs
 1023), so there is no "squeak past at *n* = 5 only" trick either.
 
@@ -78,18 +79,17 @@ same conclusion independently:
 - A participant reports proving in **Lean 4** that 21.07% is the maximum for exact synthesis.
 - Multiple participants report the same ~**21.065%** ceiling.
 - A thread titled *"Personal Best (Gold) Problem: Grader Bug"* reports that the grader can be
-  **bypassed** — a wrong/degenerate submission still marks the challenge complete and does not
-  revert the score — which is how "Gold" completions appear on the leaderboard.
+  **bypassed** (a wrong submission could still mark the challenge complete).
 - A thread titled *"I think gold solution is unreachable, and it is a test"* makes the
   1023-rotation argument.
 
 ## Conclusion
 
-Under this cost model, with ≤ 8 wires and 1e-8 accuracy, **the honest optimum is the
-parameter-optimal 4ⁿ − 1 rotation circuit (~21%), which is our Silver submission.** Gold is
-not reachable by a legitimate circuit; the completions on the board trace to a grader bug,
-which we reported to the organisers. The "Personal Best" framing and the hardened grader
-suggest the Gold threshold may be a deliberate integrity test.
+Under this cost model, with ≤ 8 wires and 1e-8 accuracy, **the best exact circuit is the
+parameter-optimal 4ⁿ − 1 rotation circuit (~21%), which is my Silver submission.** Going further
+needs a deterministic, low-ancilla Clifford+T construction that I could not find in the
+literature or build myself. I left Gold unsolved rather than submit something I could not
+verify, and reported the grader issue to the organisers.
 
 ### References
 
